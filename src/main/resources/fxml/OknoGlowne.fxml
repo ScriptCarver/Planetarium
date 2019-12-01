@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Glowny.KontrolerOknaGlownego">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="720.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextField fx:id="Customa" layoutX="14.0" layoutY="341.0" prefHeight="31.0" prefWidth="81.0" text="a" />
+            <TextField fx:id="Custome" layoutX="100.0" layoutY="341.0" prefHeight="31.0" prefWidth="81.0" text="e" />
+            <TextField fx:id="CustomName" layoutX="190.0" layoutY="341.0" prefHeight="31.0" prefWidth="81.0" text="nazwa" />
+            <Text layoutX="201.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Merkury" />
+            <Text layoutX="201.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wenus" />
+            <Text layoutX="201.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ziemia" />
+            <Text layoutX="201.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mars" />
+            <Text layoutX="201.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jowisz" />
+            <Text layoutX="201.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturn" />
+            <Text layoutX="201.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uran" />
+            <Text layoutX="201.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Neptun" />
+            <Text layoutX="201.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pluton" />
+            <ChoiceBox id="MerkuryChoice" fx:id="MercuryChoice" layoutX="285.0" layoutY="26.0" prefWidth="125.0" />
+            <ChoiceBox id="WenusChoice" fx:id="WenusChoice" layoutX="285.0" layoutY="61.0" prefWidth="125.0" />
+            <ChoiceBox id="ZiemiaChoice" fx:id="ZiemiaChoice" layoutX="285.0" layoutY="96.0" prefWidth="125.0" />
+            <ChoiceBox id="MarsChoice" fx:id="MarsChoice" layoutX="285.0" layoutY="131.0" prefWidth="125.0" />
+            <ChoiceBox id="JowiszChoice" fx:id="JowiszChoice" layoutX="285.0" layoutY="166.0" prefWidth="125.0" />
+            <ChoiceBox id="SaturnChoice" fx:id="SaturnChoice" layoutX="285.0" layoutY="201.0" prefWidth="125.0" />
+            <ChoiceBox id="UranChoice" fx:id="UranChoice" layoutX="285.0" layoutY="236.0" prefWidth="125.0" />
+            <ChoiceBox id="NeptunChoice" fx:id="NeptunChoice" layoutX="285.0" layoutY="271.0" prefWidth="125.0" />
+            <ChoiceBox id="PlutonChoice" fx:id="PlutonChoice" layoutX="285.0" layoutY="306.0" prefWidth="125.0" />
+            <ChoiceBox id="CustomChoice" fx:id="CustomChoice" layoutX="285.0" layoutY="341.0" prefWidth="125.0" />
+
+            <Button fx:id="MercuryAdd" layoutX="477.0" layoutY="26.0" mnemonicParsing="false" onAction="#DodajMercury" text="Dodaj" />
+            <Button fx:id="WenusAdd" layoutX="477.0" layoutY="61.0" mnemonicParsing="false" onAction="#DodajWenus" text="Dodaj" />
+            <Button fx:id="ZiemiaAdd" layoutX="477.0" layoutY="96.0" mnemonicParsing="false" onAction="#DodajZiemia" text="Dodaj" />
+            <Button fx:id="MarsAdd" layoutX="477.0" layoutY="131.0" mnemonicParsing="false" onAction="#DodajMars" text="Dodaj" />
+            <Button fx:id="JowiszAdd" layoutX="477.0" layoutY="166.0" mnemonicParsing="false" onAction="#DodajJowisz" text="Dodaj" />
+            <Button fx:id="SaturnAdd" layoutX="477.0" layoutY="201.0" mnemonicParsing="false" onAction="#DodajSaturn" text="Dodaj" />
+            <Button fx:id="UranAdd" layoutX="477.0" layoutY="236.0" mnemonicParsing="false" onAction="#DodajUran" text="Dodaj" />
+            <Button fx:id="NeptunAdd" layoutX="477.0" layoutY="271.0" mnemonicParsing="false" onAction="#DodajNeptun" text="Dodaj" />
+            <Button fx:id="PlatunAdd" layoutX="477.0" layoutY="306.0" mnemonicParsing="false" onAction="#DodajPluton" text="Dodaj" />
+            <Button fx:id="CustomAdd" layoutX="477.0" layoutY="341.0" mnemonicParsing="false" onAction="#DodajCustom" text="Dodaj" />
+            <Text layoutX="10.0" layoutY="25.0" text="W oknie tym istnieje mozliwosc&#10;dodania kolejnych planet do symulacji.&#10;Dla kazdej z nich ustala sie&#10;metode uzyta do przyblizenia&#10;wartosci E, oraz graniczna wartosc bledu&#10;ea. Dla planety customowej&#10;wybrac mozna dodatkowo&#10;Jej nazwe, odlegosc od gwiazdy, &#10;oraz ekscentrycznosc" wrappingWidth="169.00000953674316" />
+            <Button fx:id="Draw" layoutX="545.0" layoutY="343.0" mnemonicParsing="false" onAction="#Rysuj" text="Rysuj" />
+            <Button fx:id="DeleteAll" layoutX="545.0" layoutY="281.0" mnemonicParsing="false" onAction="#UsunWszystkie" prefHeight="53.0" prefWidth="81.0" text="Usun wszystko" wrapText="true" />
+            <Button fx:id="DeleteLastButton" layoutX="545.0" layoutY="220.0" mnemonicParsing="false" onAction="#usunOstatnie" prefHeight="53.0" prefWidth="81.0" text="Usun Ostatnie" wrapText="true" />
+            <TextField fx:id="EaMerkury" layoutX="414.0" layoutY="26.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaWenus" layoutX="414.0" layoutY="61.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaZiemia" layoutX="414.0" layoutY="96.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaMars" layoutX="414.0" layoutY="131.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaJowisz" layoutX="414.0" layoutY="166.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaSaturn" layoutX="414.0" layoutY="201.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaUran" layoutX="414.0" layoutY="236.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaNeptun" layoutX="414.0" layoutY="271.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaPluton" layoutX="414.0" layoutY="306.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+            <TextField fx:id="EaCustom" layoutX="414.0" layoutY="341.0" prefHeight="31.0" prefWidth="60.0" text="0.000001" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
