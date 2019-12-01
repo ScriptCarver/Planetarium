@@ -28,11 +28,11 @@ public class KontrolerOknaZapisu {
 
     @FXML
     void Zapisz(ActionEvent event) {
-
-        File pliku = new File(NazwaPliku.getText()+".csv");
+    if(!NazwaPliku.getText().trim().isEmpty()) {
+        File pliku = new File(NazwaPliku.getText() + ".csv");
         try {
             FileWriter zapiscsv = new FileWriter(pliku);
-            for (String s : DoDruku){
+            for (String s : DoDruku) {
                 zapiscsv.append(s);
                 zapiscsv.append("\n");
             }
@@ -41,13 +41,17 @@ public class KontrolerOknaZapisu {
             Stage stage = (Stage) ZapisButton.getScene().getWindow();
             stage.close();
 
-        WritableImage image = Wykres.snapshot(new SnapshotParameters(), null);
-        File plikuu = new File(NazwaPliku.getText()+".png");
+            WritableImage image = Wykres.snapshot(new SnapshotParameters(), null);
+            File plikuu = new File(NazwaPliku.getText() + ".png");
 
             ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", plikuu);
         } catch (IOException e) {
 
         }
+    }
+    else {
+        NazwaPliku.setText("WpiszNazwe");
+    }
     }
 
     public void setWartosci(ArrayList<String> DoDruku, ScatterChart Wykres){
