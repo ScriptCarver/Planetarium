@@ -21,28 +21,8 @@ public class PlanetkaDoPrzewidzenia {
         nazwawykresu = nazwa + " - " + metoda;
     }
 
-    public String getNazwa() {
-        return nazwa;
-    }
-
-    public double getA() {
-        return a;
-    }
-
-    public double getE() {
-        return e;
-    }
-
-    public String getMetoda() {
-        return metoda;
-    }
-
-    public double getEa() {
-        return Ea;
-    }
-
     public void wypelnijWykresik(){
-        int T = 1000;
+        int T = 3000;
         double M;
         double E;
         Wykresik = new XYChart.Series<Number,Number>();

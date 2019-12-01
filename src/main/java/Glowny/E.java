@@ -11,7 +11,7 @@ public class E implements Funkcja{
     }
 
     @Override
-    public double Policz(double x) {
+    public double policz(double x) {
         return M-e*Math.sin(x)-x;
     }
 }

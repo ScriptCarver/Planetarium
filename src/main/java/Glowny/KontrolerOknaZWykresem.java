@@ -60,7 +60,7 @@ public class KontrolerOknaZWykresem {
         loader.setLocation(fxmlUrl);
         loader.load();
         KontrolerOknaZapisu controller = loader.getController();
-        controller.setWartosci(DoDruku);
+        controller.setWartosci(DoDruku, Wykresik);
         Parent root = loader.getRoot();
         Scene scene = new Scene(root);
         Stage stage3 = new Stage();
@@ -76,7 +76,5 @@ public class KontrolerOknaZWykresem {
         for(PlanetkaDoPrzewidzenia p :PlanetyDoPrzewidzenia){
             Wykresik.getData().add(p.getWykresik());
         }
-
-
     }
 }

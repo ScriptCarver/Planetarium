@@ -1,20 +1,24 @@
 package Glowny;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.WritableImage;
 import javafx.stage.Stage;
-
-import java.awt.*;
+import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class KontrolerOknaZapisu {
 
     ArrayList<String> DoDruku;
+    ScatterChart Wykres;
 
     @FXML
     private TextField NazwaPliku;
@@ -30,20 +34,24 @@ public class KontrolerOknaZapisu {
             FileWriter zapiscsv = new FileWriter(pliku);
             for (String s : DoDruku){
                 zapiscsv.append(s);
-                System.out.println(s);
                 zapiscsv.append("\n");
             }
             zapiscsv.close();
 
             Stage stage = (Stage) ZapisButton.getScene().getWindow();
             stage.close();
-        } catch (Exception ex){
+
+        WritableImage image = Wykres.snapshot(new SnapshotParameters(), null);
+        File plikuu = new File(NazwaPliku.getText()+".png");
+
+            ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", plikuu);
+        } catch (IOException e) {
 
         }
-
     }
 
-    public void setWartosci(ArrayList<String> DoDruku){
+    public void setWartosci(ArrayList<String> DoDruku, ScatterChart Wykres){
         this.DoDruku = DoDruku;
+        this.Wykres = Wykres;
     }
 }

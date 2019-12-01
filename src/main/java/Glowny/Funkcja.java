@@ -1,5 +1,5 @@
 package Glowny;
 
 public interface Funkcja {
-    public abstract double Policz(double x);
+    public abstract double policz(double x);
 }
